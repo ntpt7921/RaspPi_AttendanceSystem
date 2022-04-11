@@ -131,3 +131,6 @@ dmypy.json
 # temp file created by the editor
 .*~
 *~
+
+# personal access token file
+pat
