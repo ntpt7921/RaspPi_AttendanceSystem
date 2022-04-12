@@ -18,39 +18,39 @@ See [V7] for the the current (newest that I can find) general info on standard.
 #### General Video (Youtube)
 - [V1]: [What is RFID? How RFID works? RFID Explained in Detail](https://youtu.be/Ukfpq71BoMo)
 - [V2]: [NFC Explained: What is NFC? How NFC Works? Applications of NFC](https://youtu.be/eWPtt2hLnJk)
-- [V3]: [What is the Difference between RFID and NFC?](https://youtu.be/cJXvT2THdDE)
+- [V3]: [What is the Difference between RFID and NFC?](https://youtu.be/cJXvT2THdDE)<br>
   Note that this video is heavily aimed toward the use of RFID and NFC within supply chain, retail and "product lifecycle" (not technical). Good mentions of practical use cases.
 - [V4]: [How safe is contactless payment? || How does RFID & NFC work? || EB#40](https://youtu.be/mzPb9QLJu8k)
-- [V5]: [EEVblog [#889](https://www.youtube.com/hashtag/889) - Credit Card RFID/NFC Theft Protection Tested](https://youtu.be/kp63MZ6RudE)
+- [V5]: [EEVblog #889 - Credit Card RFID/NFC Theft Protection Tested](https://youtu.be/kp63MZ6RudE)<br>
   Showcase cleanly the modulation of the carrier signal on an oscilloscope with a magnetic probe. Very interesting.
-- [V6]: [Fundamentals of NFC/RFID Communications](https://youtu.be/BkddfktQdbc)
+- [V6]: [Fundamentals of NFC/RFID Communications](https://youtu.be/BkddfktQdbc)<br>
   Very good video with valuable info and classification. Though the image quality is low.
-- [V7]: [ST25 NFC training v2.1: 1.3 NFC Basics](https://youtu.be/4WcbjTzXN4M)
+- [V7]: [ST25 NFC training v2.1: 1.3 NFC Basics](https://youtu.be/4WcbjTzXN4M)<br>
   Similar to [V6] (but with better image quality). Goes into more depth on NFC standards.
   
 #### General Articles
 - [T1]: [Radio-frequency identification (Wikipedia)](https://en.wikipedia.org/wiki/Radio-frequency_identification)
 - [T2]: [Near-field_communication (Wikipedia)](https://en.wikipedia.org/wiki/Near-field_communication)
-- [T3]: [Adafruit PN532 RFID/NFC Breakout and Shield](https://learn.adafruit.com/adafruit-pn532-rfid-nfc)
+- [T3]: [Adafruit PN532 RFID/NFC Breakout and Shield](https://learn.adafruit.com/adafruit-pn532-rfid-nfc)<br>
   Don't let the name fool you (into thinking that this is a guide for JUST the breakout board). This is a very good guide-tutorial styled list of posts that mention a lot of important facets (library for RaspPi, card and tag detail, NDEF format, libNFC in linux). ***The info contained is very old*** (judging by post day, which is 2012) but still good as a reference.
-- [T4]: [RFID Selection Guide](https://cdn-shop.adafruit.com/datasheets/rfid+guide.pdf)
+- [T4]: [RFID Selection Guide](https://cdn-shop.adafruit.com/datasheets/rfid+guide.pdf)<br>
   The list of NFC devices and ICs is very infomative. MF1 S50 is MIFARE Classic 1K (nobody mentions this).
 
 #### Datasheet
-- [D1]: [MF1 IC S50 - Functional specification](https://cdn-shop.adafruit.com/datasheets/S50.pdf)
+- [D1]: [MF1 IC S50 - Functional specification](https://cdn-shop.adafruit.com/datasheets/S50.pdf)<br>
   Datasheet for the S50, which can not be found on the NXP site anymore (probably due to the Crypto-1 encryption on these card being cracked - see [this](https://en.wikipedia.org/wiki/Crypto-1) and [this](https://en.wikipedia.org/wiki/MIFARE#MIFARE_Classic))
-- [D2]: [MF1S70YYX_V1 - MIFARE Classic EV1 4K - Mainstream contactless smart card IC for fast and easy solution development](https://www.nxp.com/docs/en/data-sheet/MF1S70YYX_V1.pdf)
+- [D2]: [MF1S70YYX_V1 - MIFARE Classic EV1 4K - Mainstream contactless smart card IC for fast and easy solution development](https://www.nxp.com/docs/en/data-sheet/MF1S70YYX_V1.pdf)<br>
   A improvde version of the S50 card. This datasheet have more info on various Classic MIFARE commands and (some) corresponding ISO14443 command. I can't buy and use this card but the related info is useful.
 - [D3]: [PN532/C1 - Near Field Communication (NFC) controller](https://www.nxp.com/docs/en/nxp/data-sheets/PN532_C1.pdf)
 
 #### Implementation
-- [I1]: [Raspberry gPIo](https://learn.sparkfun.com/tutorials/raspberry-gpio)
+- [I1]: [Raspberry gPIo](https://learn.sparkfun.com/tutorials/raspberry-gpio)<br>
   Good info on setting up and controlling GPIO in RaspPi. Weirdly enough, the official doc doesn't even talk about this.
-- [I2]: [Raspberry Pi SPI and I2C Tutorial](https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial)
+- [I2]: [Raspberry Pi SPI and I2C Tutorial](https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial)<br>
   Again, good info on working with I2C and SPI on RaspPi.
-- [I3]: [PN532 NFC RFID Module — A Quick Introduction](https://www.electroschematics.com/nfc-rfid-module-pn532/)
+- [I3]: [PN532 NFC RFID Module — A Quick Introduction](https://www.electroschematics.com/nfc-rfid-module-pn532/)<br>
   For connecting the PN532 breakout board into the system and use it (module, wiring, library, test code) with Arduino.
-- [I4]: [PN532 NFC HAT](https://www.waveshare.com/wiki/PN532_NFC_HAT)
+- [I4]: [PN532 NFC HAT](https://www.waveshare.com/wiki/PN532_NFC_HAT)<br>
   Has the library for RaspPi, enough said.
 
 ---
