@@ -29,3 +29,4 @@ Each folder represents a big segment of the project. Every file or documentation
 - Raspberry Pi 4 (2GB RAM)
 - PN532 module ([buy here](https://hshop.vn/products/mach-rfid-nfc-13-56mhz-pn532))
 - Camera Raspberry Pi V1 OV5647 ([buy here](https://hshop.vn/products/camera-raspberry-pi))
+- MIFARE Classic 1K ([buy here](https://hshop.vn/products/the-nhua-nfc-philips-s50rfid-13-56-mhz))
