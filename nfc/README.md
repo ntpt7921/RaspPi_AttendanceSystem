@@ -16,8 +16,12 @@ This library relied on RPi.GPIO, to import the library
 ``` python3
 import RPi.GPIO as GPIO
 
+# for the import of a file inside the nfc folder
 import pn532.pn532 as nfc
 from pn532 import *
+# if importing from the project root, then use
+#import nfc.pn532.pn532 as nfc
+#from nfc.pn532 import *
 ```
 
 ### Handler declaration
