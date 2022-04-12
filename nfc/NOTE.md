@@ -133,3 +133,9 @@ RFID may employ many modulation techniques, while NFC only uses ASK.
 RFID can operate over wide range of distance, while NFC only works at short range (<1m).
 
 In short, this comparison is like asking the different between a car and a Toyota car.
+
+---
+
+# MIFARE Classic 1K/4K card
+
+A old tech (datasheet going back before 2005). To know more, recommended reading is [T3] and then [D1]. Memory organization and authentication is found in the [D1] datasheet.
