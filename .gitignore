@@ -134,3 +134,6 @@ dmypy.json
 
 # personal access token file
 pat
+
+# kate editor swap file
+*.kate-swp
