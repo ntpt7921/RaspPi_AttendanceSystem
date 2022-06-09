@@ -1,13 +1,16 @@
 import numpy as np
+import os.path as path
 import cv2
 
 class FaceDetector:
     modelType = None
-    __model = None;
-    __modelDetectFunction = None;
+    __model = None
+    __modelPath = None
+    __modelDetectFunction = None
 
-    def __init__(self, mType):
+    def __init__(self, mType, mPath = path.dirname(__file__)):
         self.modelType = mType
+        self.__modelPath = mPath
         self.__initDetectionModel()
         self.__initDetectionFunction()
 
@@ -25,19 +28,19 @@ class FaceDetector:
             raise Exception("Unknown detection model type, provided " + self.modelType)
 
     def __initHaarModel(self):
-        modelPath = 'detection_model/opencv_harr_cascade'
+        modelPath = self.__modelPath + '/' + 'detection_model/opencv_harr_cascade'
         modelName = 'haarcascade_frontalface_default.xml'
         self.__model = cv2.CascadeClassifier(modelPath + '/' + modelName)
 
     def __initDNNModel(self):
-        modelPath = 'detection_model/opencv_dnn_face_detect'
+        modelPath = self.__modelPath + '/' + 'detection_model/opencv_dnn_face_detect'
         modelName = 'res10_300x300_ssd_iter_140000_fp16.caffemodel'
         configName = 'deploy.prototxt'
         self.__model = cv2.dnn.readNetFromCaffe(modelPath + '/' + configName,
                                                 modelPath + '/' + modelName);
 
     def __initLBPModel(self):
-        modelPath = 'detection_model/opencv_lbp_cascade'
+        modelPath = self.__modelPath + '/' + 'detection_model/opencv_lbp_cascade'
         modelName = 'lbpcascade_frontalface_improved.xml'
         self.__model = cv2.CascadeClassifier(modelPath + '/' + modelName)
 
