@@ -47,6 +47,6 @@ class Database:
     def addData(self, key, value):
         self.__data[key] = value
 
-    def removeDate(self, key):
+    def removeData(self, key):
         # user have to make sure key exist, or error will be raised
         self.__data.pop(key)

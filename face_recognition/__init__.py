@@ -11,6 +11,7 @@ COLOR_BGR_WHITE = (255, 255, 255)
 CONFIDENCE_THRES = 50
 AUTHEN_TIME_BEFORE_TIMEOUT = 10 # second
 AUTHEN_TIME_DELAY = 2 # second
+DEFAULT_DETECTION_MODEL = 'DNN'
 
 packagePath = os.path.dirname(__file__)
 recogModelPath = os.path.join(packagePath, 'recognition_data', 'saved_LBPH_model_state')
@@ -19,7 +20,7 @@ trainingFacesPath = os.path.join(packagePath, 'recognition_data', 'training_imag
 def getRecognitionModel(modelName):
     return FaceRecognizer(recogModelPath + '/' + modelName + '.yml')
 
-def getDetectionModel(modelType = 'DNN'):
+def getDetectionModel(modelType = DEFAULT_DETECTION_MODEL):
     return FaceDetector(modelType)
 
 def existRecognitionModel(modelName):
@@ -33,7 +34,7 @@ def recognizeFaceFromModel(modelName):
     if not existRecognitionModel(modelName):
         raise FileNotFoundError()
 
-    detect = getDetectionModel('DNN')
+    detect = getDetectionModel(DEFAULT_DETECTION_MODEL)
     recog = getRecognitionModel(modelName)
     cam = setupCamera(CAMERA_WIDTH, CAMERA_HEIGHT)
     startTime = time.time();
@@ -97,7 +98,7 @@ def takeFacePictures(iden, imgCountMax = 30):
     # start to take image through loop, the current image is saved when pressing s
     # can quit prematurely with pressing q
     cam = setupCamera(CAMERA_WIDTH, CAMERA_HEIGHT)
-    detect = getDetectionModel('DNN')
+    detect = getDetectionModel(DEFAULT_DETECTION_MODEL)
     imgCount = 0;
     while (imgCount < imgCountMax):
         _, img = cam.read()

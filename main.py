@@ -4,30 +4,39 @@ import nfc
 import database
 import face_recognition as fr
 import random
+import sys
 
 cardReader = nfc.readReader('i2c')
 modelDtB = database.db()
 
 # the main loop, continue until interupted by ^C
-while (True):
-    cardUID = cardReader.waitForCard()
-    cardZeroBlock = cardReader.readCard(cardUID, blockNum = 0)
-    cardNumberID = int.from_bytes(cardZeroBlock, byteorder='big')
+try:
+    while (True):
+        cardUID = cardReader.waitForCard()
+        cardZeroBlock = cardReader.readCard(cardUID, blockNum = 0)
+        cardNumberID = int.from_bytes(cardZeroBlock, byteorder='big')
 
-    recogModelName = modelDtB.getData(cardNumberID)
-    if (recogModelName is None or not fr.existRecognitionModel(recogModelName)):
-        # the user have not been registered yet
-        # or there's data entry for user, but no associated model
-        # register them
-        registerUser(cardNumberID)
-    else:
-        # registered user, try authenticate by face recognition
-        authenticateUser(recogModelName)
+        recogModelName = modelDtB.getData(cardNumberID)
+        if (recogModelName is None or not fr.existRecognitionModel(recogModelName)):
+            # the user have not been registered yet
+            # or there's data entry for user, but no associated model
+            # register them
+            registerUser(cardNumberID)
+        else:
+            # registered user, try authenticate by face recognition
+            authenticateUser(recogModelName)
+except KeyboardInterrupt:
+    # cleaning up before closing
+    modelDtB.saveToJSON()
+    cardReader.cleanup()
+    sys.exit()
 
+
+# helping function
 def registerUser(cardNumberID):
     newModelName = getRandomName(length = 30)
     fr.trainRecognitionModel(newModelName)
-    modelDtB.addData(cardNumberID, newModelName)
+    modelDtB.addData(key = cardNumberID, value = newModelName)
 
 def authenticateUser(modelName):
     print("Start authenticate by recognizing face, stand still")
