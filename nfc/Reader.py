@@ -9,7 +9,7 @@ class Reader:
     INTERFACE_SPI = 'spi'
     INTERFACE_I2C = 'i2c'
     INTERFACE_UART = 'uart'
-    KEY_TYPE_DEFAULT = 'A'
+    KEY_TYPE_DEFAULT =  nfc.MIFARE_CMD_AUTH_A
     KEY_A_VALUE_DEFAULT = b'\xFF\xFF\xFF\xFF\xFF\xFF'
 
     def __init__(self, interface):
@@ -17,9 +17,9 @@ class Reader:
             self.pn532 = PN532_SPI(debug=False, reset=20, cs=4)
         elif (interface == INTERFACE_I2C):
             self.pn532 = PN532_I2C(debug=False, reset=20, req=16)
-        elif (inteface = INTERFACE_UART):
+        elif (inteface == INTERFACE_UART):
             self.pn532 = pn532 = PN532_UART(debug=False, reset=20)
-        else
+        else:
             raise Exception("Unknown interface type: " + interface)
 
         ic, ver, rev, support = pn532.get_firmware_version()
@@ -49,7 +49,7 @@ class Reader:
 
     def writeBlock(self, blockNum, content):
         self.mifare_classic_write_block(blockNum, content)
-        if (content = self.readBlock(blockNum)):
+        if (content == self.readBlock(blockNum)):
             return True
         else:
             return False

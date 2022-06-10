@@ -37,7 +37,7 @@ cardUID = cardReader.waitForCard() # this will block until a card is detected
 blockContent = cardReader.readCard(cardUID, blockNum)
 success = cardReader.writeCard(cardUID, blockNum, content)
 # blockNum is the block number
-# content is value to be written to the specified block, is a 16 byte byte stream
+# content is value to be written to the specified block, is a 16 byte byte array
 # blockContent is similar to content, but is the value read from block
 # success denotes that writting to card successfully complete
 ```
