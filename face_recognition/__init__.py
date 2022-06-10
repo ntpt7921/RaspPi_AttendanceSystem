@@ -17,7 +17,7 @@ recogModelPath = os.path.join(packagePath, 'recognition_data', 'saved_LBPH_model
 trainingFacesPath = os.path.join(packagePath, 'recognition_data', 'training_image')
 
 def getRecognitionModel(modelName):
-    return  FaceRecognizer(recogModelPath + '/' + modelName + '.yml')
+    return FaceRecognizer(recogModelPath + '/' + modelName + '.yml')
 
 def getDetectionModel(modelType = 'DNN'):
     return FaceDetector(modelType)
