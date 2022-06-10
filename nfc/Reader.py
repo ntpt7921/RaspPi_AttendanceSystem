@@ -34,12 +34,13 @@ class Reader:
             if uid is not None:
                 break
         print('Found card with UID:', [hex(i) for i in uid])
+        return uid
 
-    def readCard(self, uid, blockNum, keyType, keyValue):
+    def readCard(self, uid, blockNum, keyType = KEY_TYPE_DEFAULT, keyValue = KEY_A_VALUE_DEFAULT):
         self.authenticateCard(uid, blockNum, keyType, keyValue)
         return self.readBlock(blockNum)
 
-    def writeCard(self, uid, blockNum, content, keyType, keyValue):
+    def writeCard(self, uid, blockNum, content, keyType = KEY_TYPE_DEFAULT, keyValue = KEY_A_VALUE_DEFAULe):
         self.authenticateCard(uid, blockNum, keyType, keyValue)
         return self.writeBlock(blockNum, content)
 
@@ -48,7 +49,7 @@ class Reader:
 
     def writeBlock(self, blockNum, content):
         self.mifare_classic_write_block(blockNum, content)
-        if (content = readBlock(blockNum)):
+        if (content = self.readBlock(blockNum)):
             return True
         else:
             return False
