@@ -2,11 +2,11 @@
 
 ## Requirement
 
-This project will utilize a Raspberry Pi 4 (2GB RAM) to implement a attendence system with facial recognition and RFID card reader. It will have the ability to access networked database of authorized personels and display the result.
+This project will utilize a Raspberry Pi 4 (2GB RAM) to implement a attendence system with facial recognition and RFID card reader. It will have the ability to access database of authorized personels and display the result.
 
-The system needs to have the ability to update and get new data from and to a database (online or local, preferably online). The ability to deny authorization if target is detected as a display device or a picture is not implemented.
+The system needs to have the ability to update and get new data from and to a database (local). The ability to deny authorization if target is detected as a display device or a picture is not implemented.
 
-The system ***may*** have a monitor, it will display a UI to help users with alignment of their face. The display will also facilitate directing user to do certain action (to help prevent using a picture to fool the system).
+The system ***may*** have a monitor, it will display a UI to help users with alignment of their face. The program can not differentiate between a real person and a picture.
 
 ## Structure
 
