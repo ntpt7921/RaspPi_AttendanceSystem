@@ -137,3 +137,6 @@ pat
 
 # kate editor swap file
 *.kate-swp
+
+# report folder
+report/

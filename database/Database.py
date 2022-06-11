@@ -1,7 +1,7 @@
 import json
 import os
 
-DATA_PATH = '.'
+DATA_PATH = os.path.dirname(__file__)
 DATA_NAME = 'data.json'
 
 class Database:
