@@ -148,7 +148,7 @@ def getLargestFace(faceCoords):
     if (len(faceCoords) == 0):
         return None;
     faceSizes = [(x2 - x1 + y2 - y1) for (x1, y1, x2, y2) in faceCoords]
-    minSizeIndex = min(range(len(faceSizes)), key=faceSizes.__getitem__) # get min value's index'
+    minSizeIndex = max(range(len(faceSizes)), key=faceSizes.__getitem__) # get max value's index'
     return faceCoords[minSizeIndex]
 
 def drawFaceBox(img, coordUpperLeft, coordLowerRight, color):
