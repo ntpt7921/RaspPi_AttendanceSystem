@@ -6,7 +6,7 @@ This project will utilize a Raspberry Pi 4 (2GB RAM) to implement a attendence s
 
 The system needs to have the ability to update and get new data from and to a database (local). The ability to deny authorization if target is detected as a display device or a picture is not implemented.
 
-The system ***may*** have a monitor, it will display a UI to help users with alignment of their face. The program can not differentiate between a real person and a picture.
+The system have a monitor, it will display a UI to help users with alignment of their face. The program can not differentiate between a real person and a picture.
 
 ## Structure
 
@@ -18,6 +18,7 @@ Project organization is as follow
 ├── database             # the database folder
 ├── face_recognition     # the face recognition folder
 ├── nfc                  # the nfc card reader folder
+├── report               # the report folder
 ├── LICENSE
 └── README.md
 ```

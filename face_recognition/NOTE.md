@@ -21,4 +21,4 @@ There will not be much here beside references, since I don't have enough time to
 - [8]: [OpenCV Documentation](https://docs.opencv.org/4.x/)
   Must mention this. Choose the version that you have. I have locally version 4.5.1. Should not have much different between major version (4.x.x).
 - [9]: [Face Recognition with OpenCV](https://docs.opencv.org/4.x/da/d60/tutorial_face_main.html)
-  Tutorial for the face module in OpenCV. Scary math. Example in C++ but the logic is the same. I skimmed through this. Read all the article if you dare.
+  Tutorial for the face module in OpenCV. Scary math. Example in C++ but the logic is the same. I skimmed through this. Read the whole article if you dare.
